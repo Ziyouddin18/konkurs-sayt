@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konkurs Sahifasi</title>
+    <style>
+        /* Umumiy parametrlar */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2g1dZXoom8YYlaESML-bX7D7d7yIrx5i9YA_VLNzQP1r9BlFVq18HHo2vMoe2ORAm3m4&usqp=CAU') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        header {
+            background-color: rgba(10, 116, 218, 0.8); /* Ko'k rang, shaffof */
+            color: white;
+            padding: 80px 0;
+            border-bottom: 3px solid #005B9F;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInHeader 1s ease-out;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .intro-text {
+            margin: 20px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f8f8f8;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Sovg'alarni ko'rsatish */
+        .gift-images {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .gift-images img {
+            width: 260px;
+            height: 260px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gift-images img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Yo'riqnomalar */
+        .instructions {
+            margin-top: 60px;
+            font-size: 1.4em;
+            color: #f8f8f8;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .instructions ul {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin: 20px 0;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .instructions li:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px);
+        }
+
+        /* Ijtimoiy tarmoqlar */
+        .social-links {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #A5D6A7;
+            font-size: 24px;
+            padding: 15px 25px;
+            border-radius: 50%;
+            border: 2px solid #A5D6A7;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #fff;
+            color: #A5D6A7;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px 0;
+            font-size: 1.2em;
+            text-align: center;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInHeader {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Mobil qurilmalar uchun moslashtirish */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0;
+            }
+
+            h1 {
+                font-size: 3.5em;
+            }
+
+            .intro-text {
+                font-size: 1.3em;
+            }
+
+            .gift-images {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .gift-images img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .instructions {
+                font-size: 1.2em;
+            }
+
+            .social-links a {
+                font-size: 22px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Konkurs Sahifasiga Xush Kelibsiz!</h1>
+    </header>
+
+    <div class="intro-text">
+        <p>O'zingizni sinab ko'ring va ajoyib sovrinlarni qo'lga kiriting!</p>
+    </div>
+
+    <div class="gift-images">
+        <img src="https://openshop.fra1.cdn.digitaloceanspaces.com/public/uploads/products/photos/202309/Ga1GKzIEWktH1WSVS08SiXb4JwHJ7Gf5H7GKjkCN.jpg" alt="Sovg'a 1">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/11/guidetoholdiaybuyingmacbook-2048px-9765-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp" alt="Sovg'a 2">
+        <img src="https://www.apple.com/v/watch/bk/images/meta/watch-gps-lte__f3xmp4zpdka6_og.png" alt="Sovg'a 3">
+        <img src="https://elmakon.uz/images/detailed/15/4_pkaf-ih.png" alt="Sovg'a 4">
+        <img src="https://brostore.uz/cdn/shop/files/1_e1df98bc-a6f1-4988-b195-8340aa49301e.png?v=1720598662" alt="Sovg'a 5">
+    </div>
+
+    <div class="instructions">
+        <h2>Qanday Ishtirok Etish Kerak?</h2>
+        <ul>
+            <li>1. Ro'yxatdan o'ting va o'z profil ma'lumotlaringizni to'ldiring.</li>
+            <li>2. Konkursga qatnashish uchun belgilangan topshiriqlarni bajarish lozim.</li>
+            <li>3. Topshiriqni bajarib bo'lgach, yuboring va natijalarni kuting!</li>
+        </ul>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="30"> Facebook
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram Logo" width="30"> Instagram
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Konkurs Sahifasi. Barcha huquqlar himoyalangan.</p>
+    </footer>
+</body>
+</html>
